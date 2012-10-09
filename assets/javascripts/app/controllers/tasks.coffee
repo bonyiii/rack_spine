@@ -1,4 +1,7 @@
 window.Tasks = class Tasks extends Spine.Controller
+  events:
+    "change input[type=checkbox]": "toggle"
+    "click  .destroy":             "destroyItem"
   constructor: ->
     super
     @item.bind("update", @render)
@@ -10,3 +13,10 @@ window.Tasks = class Tasks extends Spine.Controller
 
   remove: =>
     @el.remove()
+
+  toggle: ->
+    @item.done = !@item.done
+    @item.save()
+
+  destroyItem: ->
+    @item.destroy()

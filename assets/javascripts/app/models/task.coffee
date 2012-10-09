@@ -9,4 +9,4 @@ window.Task = class Task extends Spine.Model
     @select (item) -> !!item.done
 
   @destroyDone: ->
-    item.destroy() for item in @done 
+    rec.destroy() for rec in @done()

@@ -1,6 +1,11 @@
 window.TaskApp = class TaskApp extends Spine.Controller
+  events:
+    "submit form":  "create"
+    "click .clear": "clear"
+
   elements:
-    ".items": "items"
+    ".items":     "items"
+    "form input": "input"
 
   constructor: ->
     super
@@ -14,3 +19,11 @@ window.TaskApp = class TaskApp extends Spine.Controller
 
   addAll: =>
     Task.each(@addOne)
+
+  create: (e) ->
+    e.preventDefault()
+    Task.create(name: @input.val())
+    @input.val("")
+
+  clear: ->
+    Task.destroyDone()
