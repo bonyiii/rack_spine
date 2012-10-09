@@ -4,9 +4,9 @@ window.Tasks = class Tasks extends Spine.Controller
     @item.bind("update", @render)
     @item.bind("destroy", @remove)
   
-  render: ->
+  render: =>
     @replace $('#taskTemplate').tmpl(@item)
     @
 
-  remove: ->
+  remove: =>
     @el.remove()

@@ -3,6 +3,7 @@ window.TaskApp = class TaskApp extends Spine.Controller
     ".items": "items"
 
   constructor: ->
+    super
     Task.bind('create', @addOne)
     Task.bind('refresh', @addAll)
     Task.fetch()
