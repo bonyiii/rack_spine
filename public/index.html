@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"> 
+  <link rel="stylesheet" href="assets/app.css" type="text/css">
+  <script src="spine/spine.js"></script>
+  <script src="spine/local.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+  <script src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.js"></script>
+  <script src="assets/app.js"></script>
+</head>
+<body>
+  <script type="text/x-jquery-tmpl" id="taskTemplate">
+    <div class="item {{if done}}done{{/if}}">
+      <div class="view" title="Double click to edit...">
+        <input type="checkbox" {{if done}}checked="checked"{{/if}}> 
+        <span>${name}</span> <a class="destroy"></a>
+      </div>
+    </div>
+  </script>
+  <p>Hello world!</p>
+  <div id="views">
+    <div id="tasks">
+      <h1>Todos</h1>
+
+      <form>
+        <input type="text" placeholder="What needs to be done?">
+      </form>
+
+      <div class="items"></div>
+
+      <footer>
+      <a class="clear">Clear completed</a>
+      <div class="count"><span class="countVal"></span> left</div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
